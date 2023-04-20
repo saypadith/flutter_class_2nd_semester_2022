@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_ceit/screens/second_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -85,20 +86,31 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 34,
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 34, right: 34),
-            // color: Colors.amber,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Icon(Icons.facebook, size: 48),
-                Icon(Icons.settings, size: 48),
-                Icon(Icons.people, size: 48)
-              ],
-            ),
+          // SizedBox(
+          //   height: 34,
+          // ),
+          // Container(
+          //   margin: EdgeInsets.only(left: 34, right: 34),
+          //   // color: Colors.amber,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //     children: [
+          //       Icon(Icons.facebook, size: 48),
+          //       Icon(Icons.settings, size: 48),
+          //       Icon(Icons.people, size: 48)
+          //     ],
+          //   ),
+          // ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SecondScreen(),
+                ),
+              );
+            },
+            child: const Text("Second Screen"),
           )
         ],
       ),
