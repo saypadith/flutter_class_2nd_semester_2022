@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ceit/screens/second_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,10 +34,10 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Container(
-            margin: EdgeInsets.all(48),
+            margin: const EdgeInsets.all(48),
             width: 300,
             height: 100,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.amber,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(48),
@@ -77,16 +78,16 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
-          Center(child: Text("Sign in with:")),
+          const Center(child: Text("Sign in with:")),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 48),
+            margin: const EdgeInsets.symmetric(horizontal: 48),
             // color: Colors.indigo,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
+              children: const [
                 Icon(
                   Icons.facebook,
                   size: 48,
@@ -101,6 +102,17 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SecondScreen(),
+                ),
+              );
+            },
+            child: const Text("Second Screen"),
           )
         ],
       ),
