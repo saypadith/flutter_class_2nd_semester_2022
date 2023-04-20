@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ceit/screens/second_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Screen"),
+        title: const Text("Home Screen"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
                 width: 150,
                 height: 150,
                 color: Colors.amber,
-                child: Center(
+                child: const Center(
                   child: Text("Box A"),
                 ),
               ),
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 width: 150,
                 height: 150,
                 color: Colors.red,
-                child: Center(
+                child: const Center(
                   child: Text("Box B"),
                 ),
               ),
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             width: 300,
             height: 150,
             color: Colors.green,
-            child: Center(
+            child: const Center(
               child: Text("Box C"),
             ),
           ),
@@ -48,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 width: 100,
                 height: 100,
                 color: Colors.blue,
-                child: Center(
+                child: const Center(
                   child: Text("Box d"),
                 ),
               ),
@@ -56,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                 width: 100,
                 height: 100,
                 color: Colors.purple,
-                child: Center(
+                child: const Center(
                   child: Text("Box e"),
                 ),
               ),
@@ -64,11 +65,22 @@ class HomeScreen extends StatelessWidget {
                 width: 100,
                 height: 100,
                 color: Colors.grey,
-                child: Center(
+                child: const Center(
                   child: Text("Box f"),
                 ),
               ),
             ],
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SecondScreen(),
+                ),
+              );
+            },
+            child: const Text("Second Screen"),
           ),
         ],
       ),
