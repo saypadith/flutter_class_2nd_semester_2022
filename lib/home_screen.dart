@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ceit/screens/second_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -77,6 +78,17 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SecondScreen(),
+                ),
+              );
+            },
+            child: const Text("Second Screen"),
+          )
         ],
       ),
     );
