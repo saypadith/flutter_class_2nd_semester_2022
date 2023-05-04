@@ -1,7 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SecondScreen extends StatelessWidget {
+class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
+
+  @override
+  State<SecondScreen> createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+  bool isFavorite = false;
+
+  getFavorite() async {
+    // get favorite data from sharepreference
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isFavorite = prefs.getBool("isFavorite") ?? false;
+    });
+  }
+
+  setFavorite() async {
+    // set favorite data to sharepreference
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("isFavorite", !isFavorite);
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getFavorite();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +61,19 @@ class SecondScreen extends StatelessWidget {
                   "10,000 KIP",
                   style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
+              ),
+            ),
+            Positioned(
+              top: 10,
+              left: 20,
+              child: IconButton(
+                icon: Icon(
+                  Icons.favorite,
+                  color: isFavorite ? Colors.red : Colors.white,
+                ),
+                onPressed: () {
+                  setFavorite();
+                },
               ),
             ),
           ],
