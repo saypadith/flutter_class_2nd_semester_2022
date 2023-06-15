@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'third_screen.dart';
+
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
 
@@ -93,6 +95,14 @@ class _SecondScreenState extends State<SecondScreen> {
           child: Column(
             children: [
               const Text("second home"),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ThirdScreen();
+                    }));
+                  },
+                  child: Text("3rd screen")),
               Stack(
                 children: [
                   Image.network(
