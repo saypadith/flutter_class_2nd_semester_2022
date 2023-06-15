@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ceit/screens/third_screen.dart';
 
 class Student {
   final String name;
@@ -39,6 +40,12 @@ class SecondScreen extends StatelessWidget {
           margin: const EdgeInsets.all(16),
           child: Column(
             children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ThirdScreen()));
+                  },
+                  child: Text('3rd Screen')),
               Stack(
                 children: [
                   ClipRRect(
