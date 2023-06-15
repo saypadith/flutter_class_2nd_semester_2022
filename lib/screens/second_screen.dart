@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ceit/screens/third_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SecondScreen extends StatefulWidget {
@@ -72,6 +73,12 @@ class _SecondScreenState extends State<SecondScreen> {
           margin: EdgeInsets.all(16),
           child: Column(
             children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ThirdScreen()));
+                  },
+                  child: Text("3rd Screen")),
               Stack(
                 children: [
                   ClipRRect(
